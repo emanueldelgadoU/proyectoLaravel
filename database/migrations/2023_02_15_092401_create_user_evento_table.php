@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::create('user_evento', function (Blueprint $table) {
+        Schema::create('user_evento', function (Blueprint $table) {
 
-        //     $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
-        //     $table->foreignId('evento_id')->constrained('eventos')->onUpdate('cascade')->onDelete('cascade');
-        //     $table->integer('numEntradas');
-        //     $table->enum('estado', ['recibida', 'confirmada','cancelada']);
-        //     $table->primary(['user_id', 'evento_id']);
-        // });
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('evento_id')->constrained('eventos')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('numEntradas');
+            $table->enum('estado', ['recibida', 'confirmada','cancelada']);
+            $table->primary(['user_id', 'evento_id']);
+        });
     }
 
     /**
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('user_evento');
+        Schema::dropIfExists('user_evento');
     }
 };

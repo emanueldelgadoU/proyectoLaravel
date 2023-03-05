@@ -13,20 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::create('eventos', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('nombre');
-        //     $table->date('fecha');
-        //     $table->text('descripcion',500);
-        //     $table->string('ciudad');
-        //     $table->string('direccion');
-        //     $table->integer('aforomax');
-        //     $table->enum('tipo', ['online', 'presencial']);
-        //     $table->integer('numMaxEntradas');
-        //     $table->foreignId('categoria_id')->constrained('categorias');
-        //     $table->foreignId('user_id')->constrained('users');
+        Schema::create('eventos', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->date('fecha');
+            $table->text('descripcion',500);
+            $table->string('ciudad');
+            $table->string('direccion');
+            $table->integer('aforomax');
+            $table->enum('tipo', ['online', 'presencial']);
+            $table->integer('numMaxEntradas');
+            $table->foreignId('categoria_id')->constrained('categorias');
+            $table->foreignId('user_id')->constrained('users');
 
-        // });
+        });
     }
 
     /**
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('eventos');
+        Schema::dropIfExists('eventos');
     }
 };
